@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="../">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <script type="text/javascript" src="js/app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="small-6 small-centered columns">
+                <form action="/them" method="post">
+                    <input type="text" name="title" placeholder="nhap title" />
+                    <input type="text" name="link" placeholder="hinh" />
+                    <button type="submit" class="success button">OK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+    <%
+        for (var i = 0; i < ses.length; i++) {
+    var object = ses[i];
+    for (var property in object) {
+       %>
+       <b><%=property%></b>
+        <p><%=object[property]%></p>
+       <%
+    }
+    // If property names are known beforehand, you can also just do e.g.
+    // alert(object.id + ',' + object.Title);
+}
+    %>
+</html>
